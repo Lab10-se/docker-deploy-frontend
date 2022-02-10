@@ -1,4 +1,4 @@
-name: docker-compose-prod
+name: deploy-on-prod
 'on':
   push:
     branches:
