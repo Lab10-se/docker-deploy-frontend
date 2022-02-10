@@ -1,4 +1,4 @@
-name: Deploy frontend application
+name: docker-compose-prod
 'on':
   push:
     branches:
