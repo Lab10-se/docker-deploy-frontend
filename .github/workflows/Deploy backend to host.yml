@@ -1,4 +1,4 @@
-name: deploy-on-prod
+name: Deploy backend to host
 'on':
   push:
     branches:
