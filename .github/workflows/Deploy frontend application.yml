@@ -1,5 +1,5 @@
-name:Deploy frontend application
-"on ':
+name: Deploy frontend application
+"on":
     push:
         branches:
             - main
@@ -11,7 +11,7 @@ jobs:
             name: Checkout
             uses: actions/checkout@v2
         -
-            name; Set up QEMU
+            name: Set up QEMU
             uses: docker/setup-qemu-action@v1
         -
             name: Set up Docker Buildx
@@ -21,12 +21,12 @@ jobs:
             uses: docker/login-action@v1
         -
             with:
-                username: ${{ secrets.DOCKER HUB USERNAME }}
-                password: ${{ secrets. DOCKER HUB_ TOKEN }}
+                username: ${{ secrets.DOCKER_HUB_USERNAME }}
+                password: ${{ secrets.DOCKER_HUB_TOKEN }}
         -
                 name: prepare the docker-compose run
-                run:
-                    ls -1
+                run: |
+                    ls -l
         -
                 name: Build and push
                 uses: docker/build-push-action@v2
@@ -40,6 +40,6 @@ jobs:
                     mkdir 234-deploylab-frontend
                     cp docker-compose.yml234-deploylab-frontend/docker-compose.yml
                     cd 234-deploylab-frontend
-                    docker-compose -H ${[ secrets.HOST SERVER }} down
-                    docker-compose -H ${{ secrets.HOST SERVER }} pull
-                    docker-compose -H ${{ secrets.HOST SERVER }} up -d
+                    docker-compose -H ${{ secrets.HOST_SERVER }} down
+                    docker-compose -H ${{ secrets.HOST_SERVER }} pull
+                    docker-compose -H ${{ secrets.HOST_SERVER }} up -d
